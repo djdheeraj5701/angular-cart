@@ -1,13 +1,57 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>AngularReglog</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
-</html>
+<html>
+  <head>
+        <script src="angular.min.js"></script> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body style="text-align: center;">
+  <h2>SuperMart Bill</h2>
+  <div ng-app="myapp" ng-controller="SuperMartForm">
+    <table style="padding-left: 37%;">
+        <tr>            
+            <th>Item</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        <tr ng:repeat="item in cart.items">
+            <td><input type="text" ng:model="item.description"></td>         
+            <td><input type="number" ng:model="item.cost" ng:required></td>
+            <td><a href ng:click="removeItem($index)">
+              <i class="fa fa-trash" style="font-size:26px; color:crimson;"></i>
+            </a></td>
+        </tr>
+        <tr>
+            <td><a href ng:click="addItem()"><i class="fa fa-edit" style="font-size:24px;"></i></a></td>
+            <td></td>
+            <td>Total:</td>
+            <td>{{total() | currency:'Rs '}}</td>
+        </tr>
+    </table>
+  </div>
+  <script>
+    var app=angular.module('myapp',[]);
+    app.controller('SuperMartForm', function($scope)
+      {
+      $scope.cart = {
+          items: [{description: '', cost: ''}]
+      }
+
+      $scope.addItem = function() {
+          $scope.cart.items.push({ description: '', cost: ''});
+      }
+
+      $scope.removeItem = function(index) {
+          $scope.cart.items.splice(index, 1);
+      }
+
+      $scope.total = function() {
+          var total = 0;
+          angular.forEach($scope.cart.items, function(item) {
+              total += item.cost;
+          })
+          return total;
+      }
+  }
+  );
+  </script>
+  </body>
+ </html>
