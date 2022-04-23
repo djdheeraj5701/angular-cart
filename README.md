@@ -1,4 +1,4 @@
-# AngularReglog
+# AngularCART
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
@@ -28,6 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 https://user-images.githubusercontent.com/62329500/164909971-d570c5b4-5352-4f20-96a6-c8ba22ccc93d.png
+
 https://user-images.githubusercontent.com/62329500/164909988-7ba3e62c-a3d1-4ced-b74e-a1f46619c23e.png
+
 https://user-images.githubusercontent.com/62329500/164910003-a5150ada-f1e7-478c-a685-aa144d088f8c.png
+
 https://user-images.githubusercontent.com/62329500/164910009-0c0640ac-bd1c-4d9f-9e49-ea76b4ca2055.png
